@@ -5,21 +5,13 @@ namespace Project1 {
         static void Main() {
             Calculator calculator = new Calculator();
             while (calculator.GetContinuing()) {
-                Console.WriteLine("Type " + calculator.GetQuitString() + " to quit at any times");
                 calculator.SetOperand1();
-                if (!calculator.GetContinuing()) {
-                    break;
-                }//if (!calculator.GetContinuing()) {
                 calculator.SetOperator();
-                if (!calculator.GetContinuing()) {
-                    break;
-                }//if (!calculator.GetContinuing()) {
                 calculator.SetOperand2();
-                if (!calculator.GetContinuing()) {
-                    break;
-                }//if (!calculator.GetContinuing()) {
-                Console.WriteLine(calculator + "\n\n ================================================\n\nPress any key to continue");
-                Console.ReadKey();
+                Console.WriteLine(calculator + "\n\n================================================\n\nPress "+calculator.GetQuitChar()+" to quit or any other key to continue");
+                if (calculator.GetQuitChar() == Console.ReadKey().KeyChar) {
+                    calculator.FlipContinuing();
+                }//if (calculator.GetQuitChar() == Console.ReadKey().KeyChar) {
                 Console.Clear();
             }//while (calculator.GetContinuing()) {
         }//static void Main(string[] args) {
