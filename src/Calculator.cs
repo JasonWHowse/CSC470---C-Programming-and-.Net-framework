@@ -30,7 +30,7 @@ namespace Project1 {
                 if (operand1Str.ToLower().Equals(quitString.ToLower())) {
                     continuing = false;
                     break;
-                }//if (operand1Str.ToLower().Equals("quit")) {
+                }//if (operand1Str.ToLower().Equals(quitString.ToLower())) {
                 Console.WriteLine(operandErrorString);
                 Console.WriteLine(operandEnterString);
                 operand1Str = Console.ReadLine().Trim();
@@ -44,11 +44,11 @@ namespace Project1 {
                 if (operate.ToLower().Equals(quitString.ToLower())) {
                     continuing = false;
                     break;
-                }//if (operate.ToLower().Equals("quit")) {
+                }//if (operate.ToLower().Equals(quitString.ToLower())) {
                 Console.WriteLine(operatorErrorString);
                 Console.WriteLine(operatorEnterString);
                 operate = Console.ReadLine().Trim();
-            }//while (!"*/-+".Contains(operate)) {
+            }//while (!"*/-+".Contains(operate)||operate.Length!=1) {
         }//public void SetOperator() {
 
         public void SetOperand2() {
@@ -58,7 +58,7 @@ namespace Project1 {
                 if (operand2Str.ToLower().Equals(quitString.ToLower())) {
                     continuing = false;
                     break;
-                }//if (operand2Str.ToLower().Equals("quit")) {
+                }//if (operand2Str.ToLower().Equals(quitString.ToLower())) {
                 if (operate.Equals("/") && operand2 == 0) {
                     Console.WriteLine(operand2ErrorString);
                 } else {//if (operate.Equals("/") && operand2 == 0) {

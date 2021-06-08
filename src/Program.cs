@@ -2,7 +2,7 @@
 
 namespace Project1 {
     class Program {
-        static void Main(string[] args) {
+        static void Main() {
             Calculator calculator = new Calculator();
             while (calculator.GetContinuing()) {
                 Console.WriteLine("Type " + calculator.GetQuitString() + " to quit at any times");
