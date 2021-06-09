@@ -64,14 +64,13 @@ namespace Project1 {
         public void SetOperand2() {
             Console.WriteLine(operandEnterString);
             string operand2Str = Console.ReadLine().Trim();
-            if (!double.TryParse(operand2Str, out operand2) || operate.Equals("/") && operand2 == 0) {
-                if (operate.Equals("/") && operand2Str.Equals("0")) {
-                    Console.WriteLine(operand2ErrorString);
-                } else {//if (operate.Equals("/") && operand2Str.Equals("0")) {
-                    Console.WriteLine(operandErrorString);
-                }//else {
+            if (!double.TryParse(operand2Str, out operand2)) {
+                Console.WriteLine(operandErrorString);
                 this.SetOperand2();
-            }//if (!double.TryParse(operand2Str, out operand2) || operate.Equals("/") && operand2 == 0) {
+            } else if (operate.Equals("/") && operand2 == 0) {//if (!double.TryParse(operand2Str, out operand2)) {
+                Console.WriteLine(operand2ErrorString);
+                this.SetOperand2();
+            }//else if (operate.Equals("/") && operand2 == 0) {
         }//public void SetOperand2() {
 
         override
