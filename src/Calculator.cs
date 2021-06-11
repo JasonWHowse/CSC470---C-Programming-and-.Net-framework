@@ -4,7 +4,7 @@ namespace Project1 {
     class Calculator {
         private double operand1 = 0;
         private double operand2 = 0;
-        private char operate = '1';
+        private char operate;
         private bool continuing = true;
         private readonly string operandEnterString;
         private readonly string operatorEnterString;
@@ -55,7 +55,7 @@ namespace Project1 {
         public void SetOperator() {
             Console.WriteLine(operatorEnterString);
             operate = Console.ReadKey().KeyChar;
-            Console.WriteLine((int)operate);
+            Console.WriteLine();
             if (!"*/-+".Contains(operate)) {
                 Console.WriteLine(operatorErrorString);
                 SetOperator();
