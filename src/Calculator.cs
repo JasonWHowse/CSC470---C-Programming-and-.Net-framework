@@ -4,7 +4,7 @@ namespace Project1 {
     class Calculator {
         private double operand1 = 0;
         private double operand2 = 0;
-        private string operate = "";
+        private char operate = '1';
         private bool continuing = true;
         private readonly string operandEnterString;
         private readonly string operatorEnterString;
@@ -48,16 +48,17 @@ namespace Project1 {
             string operand1Str = Console.ReadLine().Trim();
             if (!double.TryParse(operand1Str, out operand1)) {
                 Console.WriteLine(operandErrorString);
-                this.SetOperand1();
+                SetOperand1();
             }//if (!double.TryParse(operand1Str, out operand1)) {
         }//public void setOperand1() {
 
         public void SetOperator() {
             Console.WriteLine(operatorEnterString);
-            operate = Console.ReadLine().Trim();
-            if (!"*/-+".Contains(operate) || operate.Length != 1) {
+            operate = Console.ReadKey().KeyChar;
+            Console.WriteLine((int)operate);
+            if (!"*/-+".Contains(operate)) {
                 Console.WriteLine(operatorErrorString);
-                this.SetOperator();
+                SetOperator();
             }//if (!"*/-+".Contains(operate) || operate.Length != 1) {
         }//public void SetOperator() {
 
@@ -66,16 +67,16 @@ namespace Project1 {
             string operand2Str = Console.ReadLine().Trim();
             if (!double.TryParse(operand2Str, out operand2)) {
                 Console.WriteLine(operandErrorString);
-                this.SetOperand2();
-            } else if (operate.Equals("/") && operand2 == 0) {//if (!double.TryParse(operand2Str, out operand2)) {
+                SetOperand2();
+            } else if (operate == '/' && operand2 == 0) {//if (!double.TryParse(operand2Str, out operand2)) {
                 Console.WriteLine(operand2ErrorString);
-                this.SetOperand2();
-            }//else if (operate.Equals("/") && operand2 == 0) {
+                SetOperand2();
+            }//} else if (operate == '/' && operand2 == 0)
         }//public void SetOperand2() {
 
         override
         public string ToString() {
-            return "" + operand1 + " " + operate + " " + operand2 + " = " + (operate.Equals("/") ? operand1 / operand2 : operate.Equals("+") ? operand1 + operand2 : operate.Equals("-") ? operand1 - operand2 : operand1 * operand2);
+            return "" + operand1 + " " + operate + " " + operand2 + " = " + (operate == '/' ? operand1 / operand2 : operate == '+' ? operand1 + operand2 : operate == '-' ? operand1 - operand2 : operand1 * operand2);
         }//public string ToString() {
     }//class Calculator {
 }//namespace Project1 {
