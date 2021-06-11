@@ -59,7 +59,7 @@ namespace Project1 {
             if (!"*/-+".Contains(operate)) {
                 Console.WriteLine(operatorErrorString);
                 SetOperator();
-            }//if (!"*/-+".Contains(operate) || operate.Length != 1) {
+            }//if (!"*/-+".Contains(operate)) {
         }//public void SetOperator() {
 
         public void SetOperand2() {
