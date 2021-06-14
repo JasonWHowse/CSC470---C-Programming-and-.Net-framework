@@ -11,5 +11,5 @@ namespace Lab2 {
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application {
-    }
-}
+    }//public partial class App : Application {
+}//namespace Lab2 {

@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Background="#fff"
+        Title="Lab2" Height="400" Width="400" >
     <Grid>
-        
+        <TextBox x:Name="TheTextBox"  Height="30" Margin="0,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" FontSize="14" Background="#fff" FontFamily="Courier New" Foreground="Black" BorderBrush="Black">Enter a message
+            <TextBox.Effect>
+                <DropShadowEffect Color="#FF101948"/>
+            </TextBox.Effect>
+        </TextBox>
+        <Button Click="TheButton" HorizontalAlignment="Center" Margin="0,0,0,75" VerticalAlignment="Bottom" Width="75" Background="Yellow" FontSize="14" FontFamily="Courier New">Copy
+            <Button.Effect>
+                    <DropShadowEffect Color="#FF101948"/>
+            </Button.Effect>
+        </Button>
+        <Label x:Name="TheLabel" Content="Display Here" HorizontalAlignment="Center" Margin="0,0,0,0" Background="Red" FontSize="14" RenderTransformOrigin="0,0" Width="200" FontFamily="Courier New" Height="30" VerticalAlignment="Center" HorizontalContentAlignment="Center"  >
+            <Label.Effect>
+                <DropShadowEffect Color="#FF101948"/>
+            </Label.Effect>
+        </Label>
     </Grid>
 </Window>
