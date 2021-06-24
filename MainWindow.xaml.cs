@@ -13,7 +13,7 @@ namespace Project2 {
     /// </summary>
     public partial class MainWindow : Window {
 
-        private List<Employee> employees = new List<Employee>();
+        private readonly List<Employee> employees = new List<Employee>();
         private enum ToastColors { PRIMARY, WARNING, ERROR }
         public MainWindow() {
             InitializeComponent();
@@ -29,6 +29,8 @@ namespace Project2 {
             UpdateRightSalaryLabel(ColorFromHex("e5fff1"), ColorFromHex("000000"));
 
             /*=======================================================================*/
+
+            UpdateRequired_Label(ColorFromHex("ff0000"));
 
             UpdateCalculateButton(ColorFromHex("00cc33"), ColorFromHex("000000"));
 
@@ -49,7 +51,7 @@ namespace Project2 {
 
             Employee_Create.Visibility = Employee_Update.Visibility = Visibility.Visible;
 
-            Employee_Back_Secondary.Visibility = Toastie.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
+            Required_Label.Visibility = Employee_Back_Secondary.Visibility = Toastie.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
         }//public MainWindow() {
 
         private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
@@ -61,6 +63,10 @@ namespace Project2 {
             EmployeeID_Label.Background = First_Name_TextBox.Background = Last_Name_TextBox.Background = Age_TextBox.Background = Hourly_Rate_TextBox.Background = Usual_Hours_TextBox.Background = new SolidColorBrush(color1);
             EmployeeID_Label.Foreground = First_Name_TextBox.Foreground = Last_Name_TextBox.Foreground = Age_TextBox.Foreground = Hourly_Rate_TextBox.Foreground = Usual_Hours_TextBox.Foreground = new SolidColorBrush(color2);
         }//private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
+
+        private void UpdateRequired_Label(Color color) {
+            Required_Label.Foreground = new SolidColorBrush(color);
+        }//private void UpdateRequired_Label(Color color) {
 
         private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
             Salary_Label_Text.Background = Wage_Label_Text.Background = Right_Box_Employee_Labels.Background = Right_Box_Hours_Labels.Background = new SolidColorBrush(color1);
@@ -152,7 +158,7 @@ namespace Project2 {
             if (employees.Count != 0) {
                 Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Hidden;
 
-                Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Visible;
+                Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Visible;
             } else {//if (employees.Count != 0) {
                 PopToastie("No employees created", ToastColors.ERROR, 2);
             }//else {
@@ -161,7 +167,7 @@ namespace Project2 {
         private void Create_Employee(object sender, RoutedEventArgs e) {
             Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Hidden;
 
-            Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Visible;
+            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Visible;
         }//private void Create_Employee(object sender, RoutedEventArgs e) {
 
         private void Update_Combo_SelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -203,7 +209,7 @@ namespace Project2 {
 
             EmployeeID_Label.Content = First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
 
-            Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
+            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
             PopToastie("Employee Added", ToastColors.PRIMARY, 2);
         }//private void Secondary_Save_Employee(object sender, RoutedEventArgs e) {
 
@@ -246,15 +252,14 @@ namespace Project2 {
 
             EmployeeID_Label.Content = First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
 
-            Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Hidden;
+            Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Hidden;
             PopToastie("Employee Updated", ToastColors.WARNING, 2);
         }//private void Secondary_Update_Employee(object sender, RoutedEventArgs e) {
 
         private void Calculate_wage(object sender, RoutedEventArgs e) {
-            decimal hours;
             if (Calculate_Combo_Box.SelectedIndex >= 0) {
                 Employee employee = GetEmployee(Calculate_Combo_Box.SelectedItem.ToString());
-                if (!decimal.TryParse(Hours_TextBox.Text, out hours)) {
+                if (!decimal.TryParse(Hours_TextBox.Text, out decimal hours)) {
                     PopToastie("Hours must be a positive number", ToastColors.ERROR, 2);
                 } else if (hours < 0) {//if (!decimal.TryParse(Hours_TextBox.Text, out hours)) {
                     PopToastie("Hours must be a positive number", ToastColors.ERROR, 2);
@@ -295,7 +300,7 @@ namespace Project2 {
 
             EmployeeID_Label.Content = First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
 
-            Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Hidden;
+            Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Hidden;
             PopToastie("Employee Deleted", ToastColors.ERROR, 2);
         }//private void Secondary_Delete_Employee(object sender, RoutedEventArgs e) {
 
@@ -324,8 +329,9 @@ namespace Project2 {
             }//switch (tc) {
             ToastieText.Text = message;
             Toastie.Visibility = Visibility.Visible;
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(seconds);
+            DispatcherTimer timer = new DispatcherTimer {
+                Interval = TimeSpan.FromSeconds(seconds)
+            };
             timer.Stop();
             timer.Tick += (s, en) => {
                 Toastie.Visibility = Visibility.Hidden;
@@ -339,7 +345,7 @@ namespace Project2 {
 
             First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
 
-            Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
+            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
         }//private void Secondary_Back_Employee(object sender, RoutedEventArgs e) {
 
         private (int, decimal, decimal, bool) IsValid() {

@@ -6,36 +6,38 @@
         xmlns:local="clr-namespace:Project2"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid x:Name="Background_Grid"  Background="Black">
+    <Grid x:Name="Background_Grid">
         <!--========================Left Box==================================-->
 
-        <Rectangle x:Name="Left_Box" Height="395" Margin="0,0,390,0" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="375" Fill="#777777"/>
+        <Rectangle x:Name="Left_Box" Height="395" Margin="0,0,390,0" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Width="375"/>
 
         <!--========================Left Box Primary==========================-->
 
-        <Button x:Name="Employee_Create" Content="   Create&#10;Employee" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,400,125" VerticalAlignment="Center" Height="80" Width="160" Background="#00aa00" FontSize="24" Click="Create_Employee" Foreground="Black"/>
+        <Button x:Name="Employee_Create" Content="   Create&#10;Employee" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,0,400,125" VerticalAlignment="Center" Height="80" Width="160" FontSize="24" Click="Create_Employee"/>
 
-        <Button x:Name="Employee_Update" Content="  Update&#10;Employee" HorizontalAlignment="Center" Margin="0,0,400,-125" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="80" Width="160"  Background="#dddd00" FontSize="24" Click="Update_Employee"/>
+        <Button x:Name="Employee_Update" Content="  Update&#10;Employee" HorizontalAlignment="Center" Margin="0,0,400,-125" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="80" Width="160" FontSize="24" Click="Update_Employee"/>
 
         <!--========================Left Box Secondary========================-->
 
-        <Label x:Name="First_Name_Label"  Content="First Name" HorizontalAlignment="Center" Margin="0,0,560,225" VerticalAlignment="Center" FontSize="16" Background="#0055ff" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Required_Label" Content="* denotes a required field" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,560,310" Height="30" Width="160"  />
+
+        <Label x:Name="First_Name_Label"  Content="First Name*" HorizontalAlignment="Center" Margin="0,0,560,225" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
         <TextBox x:Name="First_Name_TextBox" Margin="0,0,220,225" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="Last_Name_Label" Content="Last Name" HorizontalAlignment="Center" Margin="0,0,560,140" VerticalAlignment="Center" FontSize="16" Background="#0055ff" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Last_Name_Label" Content="Last Name*" HorizontalAlignment="Center" Margin="0,0,560,140" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
         <TextBox x:Name="Last_Name_TextBox" Margin="0,0,220,140" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="Age_Label" Content="Age" HorizontalAlignment="Center" Margin="0,0,560,55" VerticalAlignment="Center" FontSize="16" Background="#0055ff" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Age_Label" Content="Age" HorizontalAlignment="Center" Margin="0,0,560,55" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
         <TextBox x:Name="Age_TextBox" Margin="0,0,220,55" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="Hourly_Rate_Label" Content="Hourly Rate" HorizontalAlignment="Center" Margin="0,0,560,-30" VerticalAlignment="Center" FontSize="16" Background="#0055ff" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Hourly_Rate_Label" Content="Hourly Rate*" HorizontalAlignment="Center" Margin="0,0,560,-30" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
         <TextBox x:Name="Hourly_Rate_TextBox" Margin="0,0,220,-30" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="Usual_Hours_Label" Content="Usual Hours" HorizontalAlignment="Center" Margin="0,0,560,-115" VerticalAlignment="Center" FontSize="16" Background="#0055ff" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Usual_Hours_Label" Content="Usual Hours" HorizontalAlignment="Center" Margin="0,0,560,-115" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
         <TextBox x:Name="Usual_Hours_TextBox" Margin="0,0,220,-115" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
@@ -43,43 +45,43 @@
 
         <ComboBox x:Name="Update_Combo_Box" Text="Select" HorizontalAlignment="Center" Margin="0,0,220,310" VerticalAlignment="Center" SelectionChanged="Update_Combo_SelectionChanged" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="EmployeeID_Label" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,220,-200" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Height="30" Width="160" FontSize="16" Background="#0055ff" BorderBrush="#FFABADB3" BorderThickness="1,1,1,1"/>
+        <Label x:Name="EmployeeID_Label" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,220,-200" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Height="30" Width="160" FontSize="16" BorderBrush="#FFABADB3" BorderThickness="1,1,1,1"/>
 
-        <Label x:Name="EmployeeID_LabelText" Content="Employee ID" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,560,-200" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="30" Width="160" Background="#0055ff"/>
+        <Label x:Name="EmployeeID_LabelText" Content="Employee ID" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,560,-200" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Height="30" Width="160"/>
 
-        <Button x:Name="Employee_Update_Secondary" Content="Update" HorizontalAlignment="Center" Margin="0,0,560,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" Background="Aqua" FontSize="24" Click="Secondary_Update_Employee"/>
+        <Button x:Name="Employee_Update_Secondary" Content="Update" HorizontalAlignment="Center" Margin="0,0,560,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" Click="Secondary_Update_Employee"/>
 
-        <Button x:Name="Employee_Delete_Secondary" Content="Delete" HorizontalAlignment="Center" Margin="0,0,220,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" Background="Aqua" FontSize="24" Click="Secondary_Delete_Employee"/>
+        <Button x:Name="Employee_Delete_Secondary" Content="Delete" HorizontalAlignment="Center" Margin="0,0,220,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" Click="Secondary_Delete_Employee"/>
 
         <!--========================Left Box Secondary Save===================-->
 
-        <Button x:Name="Employee_Save_Secondary" Content="Save" HorizontalAlignment="Center" Margin="0,0,560,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" Background="Aqua" FontSize="24" Click="Secondary_Save_Employee"/>
+        <Button x:Name="Employee_Save_Secondary" Content="Save" HorizontalAlignment="Center" Margin="0,0,560,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" Click="Secondary_Save_Employee"/>
 
-        <Button x:Name="Employee_Back_Secondary" Content="Back" HorizontalAlignment="Center" Margin="0,0,220,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" Background="Aqua" FontSize="24" Click="Secondary_Back_Employee"/>
+        <Button x:Name="Employee_Back_Secondary" Content="Back" HorizontalAlignment="Center" Margin="0,0,220,-300" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" Click="Secondary_Back_Employee"/>
 
         <!--========================Right Box=================================-->
 
-        <Rectangle x:Name="Right_Box" Margin="0,0,-390,0" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Height="395" Width="375" Fill="#777777"/>
+        <Rectangle x:Name="Right_Box" Margin="0,0,-390,0" Stroke="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Height="395" Width="375"/>
 
-        <Label x:Name="Right_Box_Employee_Labels" Content="Employees" HorizontalAlignment="Center" Margin="0,0,-220,300" VerticalAlignment="Center" FontSize="24" Background="#0055ff" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Right_Box_Employee_Labels" Content="Employees" HorizontalAlignment="Center" Margin="0,0,-220,300" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <ComboBox x:Name="Calculate_Combo_Box" Text="Select" HorizontalAlignment="Center" Margin="0,0,-560,300" VerticalAlignment="Center" SelectionChanged="Combo_Box_Calculate" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="Right_Box_Hours_Labels" Content="Hours" HorizontalAlignment="Center" Margin="0,0,-220,150" VerticalAlignment="Center" FontSize="24" Background="#0055ff" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Right_Box_Hours_Labels" Content="Hours" HorizontalAlignment="Center" Margin="0,0,-220,150" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
         <TextBox x:Name="Hours_TextBox" Margin="0,0,-560,150" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Label x:Name="Wage_Label_Text" Content="Wage" HorizontalAlignment="Center" Margin="0,0,-220,0" VerticalAlignment="Center" FontSize="24" Background="Red" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Wage_Label_Text" Content="Wage" HorizontalAlignment="Center" Margin="0,0,-220,0" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <Label x:Name="Wage_Label" Content="" HorizontalAlignment="Center" Margin="0,0,-560,0" VerticalAlignment="Center" FontSize="24" Background="Red" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <Label x:Name="Wage_Label" Content="" HorizontalAlignment="Center" Margin="0,0,-560,0" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Button x:Name="Calculate_Button" Content="Calculate" HorizontalAlignment="Center" Margin="0,0,-400,-150" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Background="Aqua" Click="Calculate_wage"/>
+        <Button x:Name="Calculate_Button" Content="Calculate" HorizontalAlignment="Center" Margin="0,0,-400,-150" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Click="Calculate_wage"/>
 
-        <Label x:Name="Salary_Label_Text" Content="Salary" HorizontalAlignment="Center" Margin="0,0,-220,-300" VerticalAlignment="Center" FontSize="24" Background="Red" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
+        <Label x:Name="Salary_Label_Text" Content="Salary" HorizontalAlignment="Center" Margin="0,0,-220,-300" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <Label x:Name="Salary_Label" Content="" HorizontalAlignment="Center" Margin="0,0,-560,-300" VerticalAlignment="Center" FontSize="24" Background="Red" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <Label x:Name="Salary_Label" Content="" HorizontalAlignment="Center" Margin="0,0,-560,-300" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
 
-        <Border  x:Name="Toastie" CornerRadius="10" Width="160" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" BorderThickness="1,1,1,1" BorderBrush="AliceBlue">
+        <Border  x:Name="Toastie" CornerRadius="10" Width="160" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" BorderThickness="1,1,1,1">
             <TextBlock x:Name="ToastieText"  TextAlignment="Center" Margin="1,1,1,1" TextWrapping="Wrap" VerticalAlignment="Center"/>
         </Border>
     </Grid>

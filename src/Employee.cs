@@ -76,7 +76,7 @@ namespace Project2.src {
 
         override
         public bool Equals(object obj) {
-            return obj != null && obj is Employee && this.age == ((Employee)obj).age && this.firstName.Equals(((Employee)obj).firstName) && this.lastName.Equals(((Employee)obj).lastName);
+            return obj != null && obj is Employee employee && this.age == employee.age && this.firstName.Equals(employee.firstName) && this.lastName.Equals(employee.lastName);
         }//public bool Equals(object obj) {
 
         override
