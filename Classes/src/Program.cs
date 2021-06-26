@@ -12,7 +12,6 @@ namespace Classes {
 
             Line testLine = new Line(origin, bottomRight);
             Console.WriteLine("Line length is: " + testLine.GetLength());
-            xVal = 0;
         }//static void doWork() {
 
         static void Main(string[] args) {
