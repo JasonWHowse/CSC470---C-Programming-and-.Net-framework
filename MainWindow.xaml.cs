@@ -24,8 +24,8 @@ namespace Project2 {
         private string lastHourlyRate = "";
         private string lastUsualHours = "";
 
-
         /*=====================End of Instance Variables==============================*/
+
         public MainWindow() {
             InitializeComponent();
             Calculate_Combo_Box.ItemsSource = employees;
@@ -381,86 +381,85 @@ namespace Project2 {
             timer.Start();
         }//private void PopToastie(string message, ToastColors tc, int seconds) {
 
-        private void UpdateBackButton(Color color1, Color color2) {
-            Employee_Back_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Back_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateBackButton(Color color1, Color color2) {
+        private void UpdateBackButton(Color backgroundColor, Color fontColor) {
+            Employee_Back_Secondary.Background = new SolidColorBrush(backgroundColor);
+            Employee_Back_Secondary.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateBackButton(Color backgroundColor, Color fontColor) {
 
-        private void UpdateBackground(Color color) {
-            Background_Grid.Background = new SolidColorBrush(color);
-        }//private void UpdateBackground(Color color) {
+        private void UpdateBackground(Color backgroundColor) {
+            Background_Grid.Background = new SolidColorBrush(backgroundColor);
+        }//private void UpdateBackground(Color backgroundColor) {
 
-        private void UpdateCalculateButton(Color color1, Color color2) {
-            Calculate_Button.Background = new SolidColorBrush(color1);
-            Calculate_Button.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateCalculateButton(Color color1, Color color2) {
+        private void UpdateCalculateButton(Color backgroundColor, Color fontColor) {
+            Calculate_Button.Background = new SolidColorBrush(backgroundColor);
+            Calculate_Button.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateCalculateButton(Color backgroundColor, Color fontColor) {
 
-        private void UpdateCreateEmployeeButton(Color color1, Color color2) {
-            Employee_Create.Background = new SolidColorBrush(color1);
-            Employee_Create.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateCreateEmployeeButton(Color color1, Color color2) {
+        private void UpdateCreateEmployeeButton(Color backgroundColor, Color fontColor) {
+            Employee_Create.Background = new SolidColorBrush(backgroundColor);
+            Employee_Create.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateCreateEmployeeButton(Color backgroundColor, Color fontColor) {
 
-        private void UpdateDeleteButton(Color color1, Color color2) {
-            Employee_Delete_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Delete_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateDeleteButton(Color color1, Color color2) {
+        private void UpdateDeleteButton(Color backgroundColor, Color fontColor) {
+            Employee_Delete_Secondary.Background = new SolidColorBrush(backgroundColor);
+            Employee_Delete_Secondary.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateDeleteButton(Color backgroundColor, Color fontColor) {
 
-        private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
-            Last_Name_Label.Background = Age_Label.Background = Hourly_Rate_Label.Background = Usual_Hours_Label.Background = EmployeeID_LabelText.Background = First_Name_Label.Background = new SolidColorBrush(color1);
-            Last_Name_Label.Foreground = Age_Label.Foreground = Hourly_Rate_Label.Foreground = Usual_Hours_Label.Foreground = EmployeeID_LabelText.Foreground = First_Name_Label.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
+        private void UpdateLeftBoxLabelsColor(Color backgroundColor, Color fontColor) {
+            Last_Name_Label.Background = Age_Label.Background = Hourly_Rate_Label.Background = Usual_Hours_Label.Background = EmployeeID_LabelText.Background = First_Name_Label.Background = new SolidColorBrush(backgroundColor);
+            Last_Name_Label.Foreground = Age_Label.Foreground = Hourly_Rate_Label.Foreground = Usual_Hours_Label.Foreground = EmployeeID_LabelText.Foreground = First_Name_Label.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateLeftBoxLabelsColor(Color backgroundColor, Color fontColor) {
 
-        private void UpdateLeftBoxSquare(Color color) {
-            Left_Box.Fill = new SolidColorBrush(color);
-        }//private void UpdateLeftBoxSquare(Color color) {
+        private void UpdateLeftBoxSquare(Color backgroundColor) {
+            Left_Box.Fill = new SolidColorBrush(backgroundColor);
+        }//private void UpdateLeftBoxSquare(Color backgroundColor) {
 
-        private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
-            EmployeeID_Label.Background = First_Name_TextBox.Background = Last_Name_TextBox.Background = Age_TextBox.Background = Hourly_Rate_TextBox.Background = Usual_Hours_TextBox.Background = new SolidColorBrush(color1);
-            EmployeeID_Label.Foreground = First_Name_TextBox.Foreground = Last_Name_TextBox.Foreground = Age_TextBox.Foreground = Hourly_Rate_TextBox.Foreground = Usual_Hours_TextBox.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
+        private void UpdateLeftBoxTextBoxColor(Color backgroundColor, Color fontColor) {
+            EmployeeID_Label.Background = First_Name_TextBox.Background = Last_Name_TextBox.Background = Age_TextBox.Background = Hourly_Rate_TextBox.Background = Usual_Hours_TextBox.Background = new SolidColorBrush(backgroundColor);
+            EmployeeID_Label.Foreground = First_Name_TextBox.Foreground = Last_Name_TextBox.Foreground = Age_TextBox.Foreground = Hourly_Rate_TextBox.Foreground = Usual_Hours_TextBox.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateLeftBoxTextBoxColor(Color backgroundColor, Color fontColor) {
 
-        private void UpdateRequired_Label(Color color) {
-            Required_Label.Foreground = new SolidColorBrush(color);
-        }//private void UpdateRequired_Label(Color color) {
+        private void UpdateRequired_Label(Color fontColor) {
+            Required_Label.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateRequired_Label(Color fontColor) {
 
-        private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
-            Salary_Label_Text.Background = Wage_Label_Text.Background = Right_Box_Employee_Labels.Background = Right_Box_Hours_Labels.Background = new SolidColorBrush(color1);
-            Salary_Label_Text.Foreground = Wage_Label_Text.Foreground = Right_Box_Employee_Labels.Foreground = Right_Box_Hours_Labels.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
+        private void UpdateRightBoxLabelsColor(Color backgroundColor, Color fontColor) {
+            Salary_Label_Text.Background = Wage_Label_Text.Background = Right_Box_Employee_Labels.Background = Right_Box_Hours_Labels.Background = new SolidColorBrush(backgroundColor);
+            Salary_Label_Text.Foreground = Wage_Label_Text.Foreground = Right_Box_Employee_Labels.Foreground = Right_Box_Hours_Labels.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateRightBoxLabelsColor(Color backgroundColor, Color fontColor) {
+        private void UpdateRightBoxSquare(Color backgroundColor) {
+            Right_Box.Fill = new SolidColorBrush(backgroundColor);
+        }//private void UpdateRightBoxSquare(Color backgroundColor) {
 
-        private void UpdateRightBoxSquare(Color color) {
-            Right_Box.Fill = new SolidColorBrush(color);
-        }//private void UpdateRightBoxSquare(Color color) {
+        private void UpdateRightBoxTextBoxColor(Color backgroundColor, Color fontColor) {
+            Hours_TextBox.Background = new SolidColorBrush(backgroundColor);
+            Hours_TextBox.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateRightBoxTextBoxColor(Color backgroundColor, Color fontColor) {
 
-        private void UpdateRightBoxTextBoxColor(Color color1, Color color2) {
-            Hours_TextBox.Background = new SolidColorBrush(color1);
-            Hours_TextBox.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightBoxTextBoxColor(Color color1, Color color2) {
+        private void UpdateRightBoxWageLabel(Color backgroundColor, Color fontColor) {
+            Wage_Label.Background = new SolidColorBrush(backgroundColor);
+            Wage_Label.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateRightBoxWageLabel(Color backgroundColor, Color fontColor) {
 
-        private void UpdateRightBoxWageLabel(Color color1, Color color2) {
-            Wage_Label.Background = new SolidColorBrush(color1);
-            Wage_Label.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightBoxWageLabel(Color color1, Color color2) {
+        private void UpdateRightSalaryLabel(Color backgroundColor, Color fontColor) {
+            Salary_Label.Background = new SolidColorBrush(backgroundColor);
+            Salary_Label.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateRightSalaryLabel(Color backgroundColor, Color fontColor) {
 
-        private void UpdateRightSalaryLabel(Color color1, Color color2) {
-            Salary_Label.Background = new SolidColorBrush(color1);
-            Salary_Label.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightSalaryLabel(Color color1, Color color2) {
+        private void UpdateSaveButton(Color backgroundColor, Color fontColor) {
+            Employee_Save_Secondary.Background = new SolidColorBrush(backgroundColor);
+            Employee_Save_Secondary.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateSaveButton(Color backgroundColor, Color fontColor) {
 
-        private void UpdateSaveButton(Color color1, Color color2) {
-            Employee_Save_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Save_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateSaveButton(Color color1, Color color2) {
+        private void UpdateUpdateButton(Color backgroundColor, Color fontColor) {
+            Employee_Update_Secondary.Background = new SolidColorBrush(backgroundColor);
+            Employee_Update_Secondary.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateUpdateButton(Color backgroundColor, Color fontColor) {
 
-        private void UpdateUpdateButton(Color color1, Color color2) {
-            Employee_Update_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Update_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateUpdateButton(Color color1, Color color2) {
-
-        private void UpdateUpdateEmployeeButton(Color color1, Color color2) {
-            Employee_Update.Background = new SolidColorBrush(color1);
-            Employee_Update.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateUpdateEmployeeButton(Color color1, Color color2) {
+        private void UpdateUpdateEmployeeButton(Color backgroundColor, Color fontColor) {
+            Employee_Update.Background = new SolidColorBrush(backgroundColor);
+            Employee_Update.Foreground = new SolidColorBrush(fontColor);
+        }//private void UpdateUpdateEmployeeButton(Color backgroundColor, Color fontColor) {
 
         /*================End of Helper functions=====================================*/
     }//public partial class MainWindow : Window {
