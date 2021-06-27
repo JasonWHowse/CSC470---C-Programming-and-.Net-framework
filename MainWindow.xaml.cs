@@ -308,12 +308,7 @@ namespace Project2 {
         }//private static Color ColorFromHex(string color) {
 
         private Employee GetEmployee(string fromBox) {
-            foreach (Employee emp in employees) {
-                if (emp.GetEmployeeID() == int.Parse(fromBox.Split(":")[0].Trim())) {
-                    return emp;
-                }//if (emp.GetEmployeeID() == int.Parse(fromBox.Split(":")[0].Trim())) {
-            }//foreach (Employee emp in employees) {
-            return null;
+            return employees.FindLast(s => s.GetEmployeeID() == int.Parse(fromBox.Split(":")[0].Trim()));
         }//private Employee GetEmployee(string fromBox) {
 
         private (int, decimal, decimal, bool) IsValid() {
