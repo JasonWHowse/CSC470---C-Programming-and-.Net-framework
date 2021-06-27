@@ -23,23 +23,23 @@
 
         <Label x:Name="First_Name_Label"  Content="First Name*" HorizontalAlignment="Center" Margin="0,0,560,225" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
-        <TextBox x:Name="First_Name_TextBox" Margin="0,0,220,225" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="First_Name_TextBox" Margin="0,0,220,225" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" TextChanged="FirstNameDelta"/>
 
         <Label x:Name="Last_Name_Label" Content="Last Name*" HorizontalAlignment="Center" Margin="0,0,560,140" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
-        <TextBox x:Name="Last_Name_TextBox" Margin="0,0,220,140" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="Last_Name_TextBox" Margin="0,0,220,140" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" TextChanged="LastNameDelta"/>
 
         <Label x:Name="Age_Label" Content="Age" HorizontalAlignment="Center" Margin="0,0,560,55" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
-        <TextBox x:Name="Age_TextBox" Margin="0,0,220,55" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="Age_TextBox" Margin="0,0,220,55" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" TextChanged="AgeDelta"/>
 
         <Label x:Name="Hourly_Rate_Label" Content="Hourly Rate*" HorizontalAlignment="Center" Margin="0,0,560,-30" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
-        <TextBox x:Name="Hourly_Rate_TextBox" Margin="0,0,220,-30" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="Hourly_Rate_TextBox" Margin="0,0,220,-30" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" TextChanged="HourlyRateDelta"/>
 
         <Label x:Name="Usual_Hours_Label" Content="Usual Hours" HorizontalAlignment="Center" Margin="0,0,560,-115" VerticalAlignment="Center" FontSize="16" Height="30" Width="160" VerticalContentAlignment="Top" HorizontalContentAlignment="Left"/>
 
-        <TextBox x:Name="Usual_Hours_TextBox" Margin="0,0,220,-115" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="Usual_Hours_TextBox" Margin="0,0,220,-115" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="30" Width="160" FontSize="16" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" TextChanged="UsualHoursDelta"/>
 
         <!--========================Left Box Secondary Update=================-->
 
@@ -69,7 +69,7 @@
 
         <Label x:Name="Right_Box_Hours_Labels" Content="Hours" HorizontalAlignment="Center" Margin="0,0,-220,150" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 
-        <TextBox x:Name="Hours_TextBox" Margin="0,0,-560,150" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+        <TextBox x:Name="Hours_TextBox" Margin="0,0,-560,150" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Height="50" Width="160" FontSize="24" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" TextChanged="HoursDelta"/>
 
         <Label x:Name="Wage_Label_Text" Content="Wage" HorizontalAlignment="Center" Margin="0,0,-220,0" VerticalAlignment="Center" FontSize="24" Height="50" Width="160" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"/>
 

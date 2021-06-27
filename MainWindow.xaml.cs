@@ -13,8 +13,19 @@ namespace Project2 {
     /// </summary>
     public partial class MainWindow : Window {
 
+        /*============================Instance Variables==============================*/
+
         private readonly List<Employee> employees = new List<Employee>();
         private enum ToastColors { PRIMARY, WARNING, ERROR }
+        private string lastHours = "";
+        private string lastFirstName = "";
+        private string lastLastName = "";
+        private string lastAge = "";
+        private string lastHourlyRate = "";
+        private string lastUsualHours = "";
+
+
+        /*=====================End of Instance Variables==============================*/
         public MainWindow() {
             InitializeComponent();
             Calculate_Combo_Box.ItemsSource = employees;
@@ -54,90 +65,7 @@ namespace Project2 {
             Required_Label.Visibility = Employee_Back_Secondary.Visibility = Toastie.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
         }//public MainWindow() {
 
-        private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
-            Last_Name_Label.Background = Age_Label.Background = Hourly_Rate_Label.Background = Usual_Hours_Label.Background = EmployeeID_LabelText.Background = First_Name_Label.Background = new SolidColorBrush(color1);
-            Last_Name_Label.Foreground = Age_Label.Foreground = Hourly_Rate_Label.Foreground = Usual_Hours_Label.Foreground = EmployeeID_LabelText.Foreground = First_Name_Label.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
-
-        private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
-            EmployeeID_Label.Background = First_Name_TextBox.Background = Last_Name_TextBox.Background = Age_TextBox.Background = Hourly_Rate_TextBox.Background = Usual_Hours_TextBox.Background = new SolidColorBrush(color1);
-            EmployeeID_Label.Foreground = First_Name_TextBox.Foreground = Last_Name_TextBox.Foreground = Age_TextBox.Foreground = Hourly_Rate_TextBox.Foreground = Usual_Hours_TextBox.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
-
-        private void UpdateRequired_Label(Color color) {
-            Required_Label.Foreground = new SolidColorBrush(color);
-        }//private void UpdateRequired_Label(Color color) {
-
-        private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
-            Salary_Label_Text.Background = Wage_Label_Text.Background = Right_Box_Employee_Labels.Background = Right_Box_Hours_Labels.Background = new SolidColorBrush(color1);
-            Salary_Label_Text.Foreground = Wage_Label_Text.Foreground = Right_Box_Employee_Labels.Foreground = Right_Box_Hours_Labels.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
-
-        private void UpdateRightBoxTextBoxColor(Color color1, Color color2) {
-            Hours_TextBox.Background = new SolidColorBrush(color1);
-            Hours_TextBox.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightBoxTextBoxColor(Color color1, Color color2) {
-
-        private void UpdateRightBoxWageLabel(Color color1, Color color2) {
-            Wage_Label.Background = new SolidColorBrush(color1);
-            Wage_Label.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightBoxWageLabel(Color color1, Color color2) {
-
-        private void UpdateRightSalaryLabel(Color color1, Color color2) {
-            Salary_Label.Background = new SolidColorBrush(color1);
-            Salary_Label.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateRightSalaryLabel(Color color1, Color color2) {
-
-        private void UpdateCalculateButton(Color color1, Color color2) {
-            Calculate_Button.Background = new SolidColorBrush(color1);
-            Calculate_Button.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateCalculateButton(Color color1, Color color2) {
-
-        private void UpdateSaveButton(Color color1, Color color2) {
-            Employee_Save_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Save_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateSaveButton(Color color1, Color color2) {
-
-        private void UpdateBackButton(Color color1, Color color2) {
-            Employee_Back_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Back_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateBackButton(Color color1, Color color2) {
-
-        private void UpdateUpdateButton(Color color1, Color color2) {
-            Employee_Update_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Update_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateUpdateButton(Color color1, Color color2) {
-
-        private void UpdateDeleteButton(Color color1, Color color2) {
-            Employee_Delete_Secondary.Background = new SolidColorBrush(color1);
-            Employee_Delete_Secondary.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateDeleteButton(Color color1, Color color2) {
-
-        private void UpdateUpdateEmployeeButton(Color color1, Color color2) {
-            Employee_Update.Background = new SolidColorBrush(color1);
-            Employee_Update.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateUpdateEmployeeButton(Color color1, Color color2) {
-
-        private void UpdateCreateEmployeeButton(Color color1, Color color2) {
-            Employee_Create.Background = new SolidColorBrush(color1);
-            Employee_Create.Foreground = new SolidColorBrush(color2);
-        }//private void UpdateCreateEmployeeButton(Color color1, Color color2) {
-
-        private void UpdateBackground(Color color) {
-            Background_Grid.Background = new SolidColorBrush(color);
-        }//private void UpdateBackground(Color color) {
-
-        private void UpdateRightBoxSquare(Color color) {
-            Right_Box.Fill = new SolidColorBrush(color);
-        }//private void UpdateRightBoxSquare(Color color) {
-
-        private void UpdateLeftBoxSquare(Color color) {
-            Left_Box.Fill = new SolidColorBrush(color);
-        }//private void UpdateLeftBoxSquare(Color color) {
-
-        private static Color ColorFromHex(string color) {
-            return Color.FromRgb(Convert.ToByte(color[0..2], 16), Convert.ToByte(color[2..4], 16), Convert.ToByte(color[4..6], 16));
-        }//private static Color ColorFromHex(string color) {
+        /*============================ComboBox Delta==================================*/
 
         private void Combo_Box_Calculate(object sender, SelectionChangedEventArgs e) {
             if (Calculate_Combo_Box.SelectedIndex >= 0) {
@@ -154,22 +82,6 @@ namespace Project2 {
             }//else {
         }//private void Combo_Box_Calculate(object sender, SelectionChangedEventArgs e) {
 
-        private void Update_Employee(object sender, RoutedEventArgs e) {
-            if (employees.Count != 0) {
-                Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Hidden;
-
-                Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Visible;
-            } else {//if (employees.Count != 0) {
-                PopToastie("No employees created", ToastColors.ERROR, 2);
-            }//else {
-        }//private void Update_Employee(object sender, RoutedEventArgs e) {
-
-        private void Create_Employee(object sender, RoutedEventArgs e) {
-            Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Hidden;
-
-            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Visible;
-        }//private void Create_Employee(object sender, RoutedEventArgs e) {
-
         private void Update_Combo_SelectionChanged(object sender, SelectionChangedEventArgs e) {
             if (Update_Combo_Box.SelectedIndex >= 0) {
                 Employee employee = GetEmployee(Update_Combo_Box.SelectedItem.ToString());
@@ -181,6 +93,63 @@ namespace Project2 {
                 EmployeeID_Label.Content = employee.GetEmployeeID();
             }//if (Update_Combo_Box.SelectedIndex >= 0) {
         }//private void Update_Combo_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+        /*=====================End of ComboBox Delta==================================*/
+
+        /*==============================Buttons=======================================*/
+
+        private void Calculate_wage(object sender, RoutedEventArgs e) {
+            if (Calculate_Combo_Box.SelectedIndex >= 0) {
+                Employee employee = GetEmployee(Calculate_Combo_Box.SelectedItem.ToString());
+                if (!decimal.TryParse(Hours_TextBox.Text, out decimal hours)) {
+                    PopToastie("Hours must be a positive number", ToastColors.ERROR, 2);
+                } else if (hours < 0) {//if (!decimal.TryParse(Hours_TextBox.Text, out hours)) {
+                    PopToastie("Hours must be a positive number", ToastColors.ERROR, 2);
+                } else {//else if (hours < 0) {
+                    Salary_Label.Content = (hours > 40.0m ? 1.5m * (hours - 40.0m) * employee.GetHourlyConsultingRate() + 40.0m * employee.GetHourlyConsultingRate() : hours * employee.GetHourlyConsultingRate()).ToString("C2");
+                }//} else {
+            } else {//if (Calculate_Combo_Box.SelectedIndex >= 0) {
+                PopToastie("Please select an employee", ToastColors.ERROR, 2);
+            }//else {
+        }//private void Calculate_wage(object sender, RoutedEventArgs e) {
+
+        private void Create_Employee(object sender, RoutedEventArgs e) {
+            Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Hidden;
+
+            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Visible;
+        }//private void Create_Employee(object sender, RoutedEventArgs e) {
+
+        private void Secondary_Back_Employee(object sender, RoutedEventArgs e) {
+            Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Visible;
+
+            First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
+
+            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
+        }//private void Secondary_Back_Employee(object sender, RoutedEventArgs e) {
+
+        private void Secondary_Delete_Employee(object sender, RoutedEventArgs e) {
+            if (Update_Combo_Box.SelectedIndex == -1) {
+                PopToastie("Must select an employee", ToastColors.ERROR, 2);
+                return;
+            }//if (Update_Combo_Box.SelectedIndex == -1) {
+
+            employees.Remove(GetEmployee(Update_Combo_Box.SelectedItem.ToString()));
+
+            Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Visible;
+
+            Update_Combo_Box.SelectedIndex = -1;
+
+            Calculate_Combo_Box.ItemsSource = null;
+            Update_Combo_Box.ItemsSource = null;
+
+            Calculate_Combo_Box.ItemsSource = employees;
+            Update_Combo_Box.ItemsSource = employees;
+
+            EmployeeID_Label.Content = First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
+
+            Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Hidden;
+            PopToastie("Employee Deleted", ToastColors.ERROR, 2);
+        }//private void Secondary_Delete_Employee(object sender, RoutedEventArgs e) {
 
         private void Secondary_Save_Employee(object sender, RoutedEventArgs e) {
             int? age = -1;
@@ -256,20 +225,87 @@ namespace Project2 {
             PopToastie("Employee Updated", ToastColors.WARNING, 2);
         }//private void Secondary_Update_Employee(object sender, RoutedEventArgs e) {
 
-        private void Calculate_wage(object sender, RoutedEventArgs e) {
-            if (Calculate_Combo_Box.SelectedIndex >= 0) {
-                Employee employee = GetEmployee(Calculate_Combo_Box.SelectedItem.ToString());
-                if (!decimal.TryParse(Hours_TextBox.Text, out decimal hours)) {
-                    PopToastie("Hours must be a positive number", ToastColors.ERROR, 2);
-                } else if (hours < 0) {//if (!decimal.TryParse(Hours_TextBox.Text, out hours)) {
-                    PopToastie("Hours must be a positive number", ToastColors.ERROR, 2);
-                } else {//else if (hours < 0) {
-                    Salary_Label.Content = (hours > 40.0m ? 1.5m * (hours - 40.0m) * employee.GetHourlyConsultingRate() + 40.0m * employee.GetHourlyConsultingRate() : hours * employee.GetHourlyConsultingRate()).ToString("C2");
-                }//} else {
-            } else {//if (Calculate_Combo_Box.SelectedIndex >= 0) {
-                PopToastie("Please select an employee", ToastColors.ERROR, 2);
+        private void Update_Employee(object sender, RoutedEventArgs e) {
+            if (employees.Count != 0) {
+                Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Hidden;
+
+                Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Visible;
+            } else {//if (employees.Count != 0) {
+                PopToastie("No employees created", ToastColors.ERROR, 2);
             }//else {
-        }//private void Calculate_wage(object sender, RoutedEventArgs e) {
+        }//private void Update_Employee(object sender, RoutedEventArgs e) {
+
+        /*=======================End of Buttons=======================================*/
+
+        /*=======================Text box delta checkers==============================*/
+
+        private void AgeDelta(object sender, RoutedEventArgs e) {
+            if (Age_TextBox.Text.Length != 0 && (!int.TryParse(Age_TextBox.Text, out int age) || age < 0)) {
+                int index = Age_TextBox.CaretIndex - 1;
+                Age_TextBox.Text = lastAge;
+                Age_TextBox.CaretIndex = index;
+                PopToastie("Age must be a positive integer", ToastColors.ERROR, 5);
+            }//if (Age_TextBox.Text.Length != 0 && (!int.TryParse(Age_TextBox.Text, out int age) || age < 0)) {
+            lastAge = Age_TextBox.Text;
+        }//private void AgeDelta(object sender, RoutedEventArgs e) {
+
+        private void FirstNameDelta(object sender, RoutedEventArgs e) {
+            if (First_Name_TextBox.Text.Length > 0 && !First_Name_TextBox.Text.All(char.IsLetter)) {
+                int index = First_Name_TextBox.CaretIndex - 1;
+                First_Name_TextBox.Text = lastFirstName;
+                First_Name_TextBox.CaretIndex = index;
+                PopToastie("First name must only contain alphabet characters", ToastColors.ERROR, 5);
+            }////if (First_Name_TextBox.Text.Length > 0 && !First_Name_TextBox.Text.All(char.IsLetter)) {
+            lastFirstName = First_Name_TextBox.Text;
+        }//private void FirstNameDelta(object sender, RoutedEventArgs e) {
+
+        private void HoursDelta(object sender, RoutedEventArgs e) {
+            if (Hours_TextBox.Text.Length > 0 && !Hours_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Hours_TextBox.Text, out decimal hours) || hours < 0)) {
+                int index = Hours_TextBox.CaretIndex - 1;
+                Hours_TextBox.Text = lastHours;
+                Hours_TextBox.CaretIndex = index;
+                PopToastie("Hours must be a positive number", ToastColors.ERROR, 5);
+            }//if (Hours_TextBox.Text.Length > 0 && !Hours_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Hours_TextBox.Text, out decimal hours) || hours < 0)) {
+            lastHours = Hours_TextBox.Text;
+        }//private void HoursDelta(object sender, RoutedEventArgs e) {
+
+        private void HourlyRateDelta(object sender, RoutedEventArgs e) {
+            if (Hourly_Rate_TextBox.Text.Length > 0 && !Hourly_Rate_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Hourly_Rate_TextBox.Text, out decimal hourlyRate) || hourlyRate < 0)) {
+                int index = Hourly_Rate_TextBox.CaretIndex - 1;
+                Hourly_Rate_TextBox.Text = lastHourlyRate;
+                Hourly_Rate_TextBox.CaretIndex = index;
+                PopToastie("Hourly rate must be a positive number", ToastColors.ERROR, 5);
+            }//if (Hourly_Rate_TextBox.Text.Length > 0 && !Hourly_Rate_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Hourly_Rate_TextBox.Text, out decimal hourlyRate) || hourlyRate < 0)) {
+            lastHourlyRate = Hourly_Rate_TextBox.Text;
+        }//private void HourlyRateDelta(object sender, RoutedEventArgs e) {
+
+        private void LastNameDelta(object sender, RoutedEventArgs e) {
+            if (Last_Name_TextBox.Text.Length > 0 && !Last_Name_TextBox.Text.All(char.IsLetter)) {
+                int index = Last_Name_TextBox.CaretIndex - 1;
+                Last_Name_TextBox.Text = lastLastName;
+                Last_Name_TextBox.CaretIndex = index;
+                PopToastie("Last name must only contain alphabet characters", ToastColors.ERROR, 5);
+            }//if (Last_Name_TextBox.Text.Length > 0 && !Last_Name_TextBox.Text.All(char.IsLetter)) {
+            lastLastName = Last_Name_TextBox.Text;
+        }//private void LastNameDelta(object sender, RoutedEventArgs e) {
+
+        private void UsualHoursDelta(object sender, RoutedEventArgs e) {
+            if (Usual_Hours_TextBox.Text.Length > 0 && !Usual_Hours_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Usual_Hours_TextBox.Text, out decimal hours) || hours < 0)) {
+                int index = Usual_Hours_TextBox.CaretIndex - 1;
+                Usual_Hours_TextBox.Text = lastUsualHours;
+                Usual_Hours_TextBox.CaretIndex = index;
+                PopToastie("Usual hours must be a positive number", ToastColors.ERROR, 5);
+            }//if (Usual_Hours_TextBox.Text.Length > 0 && !Usual_Hours_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Usual_Hours_TextBox.Text, out decimal hours) || hours < 0)) {
+            lastUsualHours = Usual_Hours_TextBox.Text;
+        }//private void UsualHoursDelta(object sender, RoutedEventArgs e) {
+
+        /*================End of Text box delta checkers==============================*/
+
+        /*=======================Helper functions=====================================*/
+        
+        private static Color ColorFromHex(string color) {
+            return Color.FromRgb(Convert.ToByte(color[0..2], 16), Convert.ToByte(color[2..4], 16), Convert.ToByte(color[4..6], 16));
+        }//private static Color ColorFromHex(string color) {
 
         private Employee GetEmployee(string fromBox) {
             foreach (Employee emp in employees) {
@@ -280,29 +316,34 @@ namespace Project2 {
             return null;
         }//private Employee GetEmployee(string fromBox) {
 
-        private void Secondary_Delete_Employee(object sender, RoutedEventArgs e) {
-            if (Update_Combo_Box.SelectedIndex == -1) {
-                PopToastie("Must select an employee", ToastColors.ERROR, 2);
-                return;
-            }//if (Update_Combo_Box.SelectedIndex == -1) {
+        private (int, decimal, decimal, bool) IsValid() {
+            int age = -1;
+            decimal hourlyRate = -1.0m;
+            decimal usualHours = -1.0m;
 
-            employees.Remove(GetEmployee(Update_Combo_Box.SelectedItem.ToString()));
+            if (!First_Name_TextBox.Text.All(char.IsLetter) || First_Name_TextBox.Text.Length == 0) {
+                PopToastie("First name can not be blank and must only contain alphabet characters", ToastColors.ERROR, 5);
+                return (0, 0.0m, 0.0m, false);
+            }//if (!First_Name_TextBox.Text.All(char.IsLetter) || First_Name_TextBox.Text.Length == 0) {
+            if (!Last_Name_TextBox.Text.All(char.IsLetter) || Last_Name_TextBox.Text.Length == 0) {
+                PopToastie("Last name can not be blank and must only contain alphabet characters", ToastColors.ERROR, 5);
+                return (0, 0.0m, 0.0m, false);
+            }//if (!Last_Name_TextBox.Text.All(char.IsLetter) || Last_Name_TextBox.Text.Length == 0) {
+            if (!int.TryParse(Age_TextBox.Text, out age) && Age_TextBox.Text.Length != 0 || age < 0 || Age_TextBox.Text.Equals("-1")) {
+                PopToastie("Age must be a positive integer", ToastColors.ERROR, 5);
+                return (0, 0.0m, 0.0m, false);
+            }//if (!int.TryParse(Age_TextBox.Text, out age) && Age_TextBox.Text.Length != 0 || age < 0 || Age_TextBox.Text.Equals("-1")) {
+            if (!decimal.TryParse(Hourly_Rate_TextBox.Text, out hourlyRate) || Hourly_Rate_TextBox.Text.Length == 0 || Hourly_Rate_TextBox.Text.Trim()[0] == '-') {
+                PopToastie("Hourly rate must be a positive number", ToastColors.ERROR, 5);
+                return (0, 0.0m, 0.0m, false);
+            }//if (!decimal.TryParse(Hourly_Rate_TextBox.Text, out hourlyRate) || Hourly_Rate_TextBox.Text.Length == 0 || Hourly_Rate_TextBox.Text.Trim()[0] == '-') {
+            if (Usual_Hours_TextBox.Text.Trim().Length != 0 && (!decimal.TryParse(Usual_Hours_TextBox.Text, out usualHours) || Usual_Hours_TextBox.Text.Trim()[0] == '-')) {
+                PopToastie("Usual hours must be a positive number", ToastColors.ERROR, 5);
+                return (0, 0.0m, 0.0m, false);
+            }//if (Usual_Hours_TextBox.Text.Trim().Length != 0 && (!decimal.TryParse(Usual_Hours_TextBox.Text, out usualHours) || Usual_Hours_TextBox.Text.Trim()[0] == '-')) {
 
-            Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Visible;
-
-            Update_Combo_Box.SelectedIndex = -1;
-
-            Calculate_Combo_Box.ItemsSource = null;
-            Update_Combo_Box.ItemsSource = null;
-
-            Calculate_Combo_Box.ItemsSource = employees;
-            Update_Combo_Box.ItemsSource = employees;
-
-            EmployeeID_Label.Content = First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
-
-            Required_Label.Visibility = Employee_Delete_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Update_Combo_Box.Visibility = Employee_Update_Secondary.Visibility = EmployeeID_Label.Visibility = EmployeeID_LabelText.Visibility = Visibility.Hidden;
-            PopToastie("Employee Deleted", ToastColors.ERROR, 2);
-        }//private void Secondary_Delete_Employee(object sender, RoutedEventArgs e) {
+            return (Age_TextBox.Text.Length == 0 ? -1 : age, hourlyRate, usualHours, true);
+        }//private (int, decimal, decimal, bool) IsValid() {
 
         private void PopToastie(string message, ToastColors tc, int seconds) {
             switch (tc) {
@@ -340,41 +381,87 @@ namespace Project2 {
             timer.Start();
         }//private void PopToastie(string message, ToastColors tc, int seconds) {
 
-        private void Secondary_Back_Employee(object sender, RoutedEventArgs e) {
-            Employee_Update.Visibility = Employee_Create.Visibility = Visibility.Visible;
+        private void UpdateBackButton(Color color1, Color color2) {
+            Employee_Back_Secondary.Background = new SolidColorBrush(color1);
+            Employee_Back_Secondary.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateBackButton(Color color1, Color color2) {
 
-            First_Name_TextBox.Text = Last_Name_TextBox.Text = Age_TextBox.Text = Hourly_Rate_TextBox.Text = Usual_Hours_TextBox.Text = "";
+        private void UpdateBackground(Color color) {
+            Background_Grid.Background = new SolidColorBrush(color);
+        }//private void UpdateBackground(Color color) {
 
-            Required_Label.Visibility = Employee_Back_Secondary.Visibility = First_Name_Label.Visibility = First_Name_TextBox.Visibility = Last_Name_Label.Visibility = Last_Name_TextBox.Visibility = Age_Label.Visibility = Age_TextBox.Visibility = Hourly_Rate_Label.Visibility = Hourly_Rate_TextBox.Visibility = Usual_Hours_Label.Visibility = Usual_Hours_TextBox.Visibility = Employee_Save_Secondary.Visibility = Visibility.Hidden;
-        }//private void Secondary_Back_Employee(object sender, RoutedEventArgs e) {
+        private void UpdateCalculateButton(Color color1, Color color2) {
+            Calculate_Button.Background = new SolidColorBrush(color1);
+            Calculate_Button.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateCalculateButton(Color color1, Color color2) {
 
-        private (int, decimal, decimal, bool) IsValid() {
-            int age = -1;
-            decimal hourlyRate = -1.0m;
-            decimal usualHours = -1.0m;
+        private void UpdateCreateEmployeeButton(Color color1, Color color2) {
+            Employee_Create.Background = new SolidColorBrush(color1);
+            Employee_Create.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateCreateEmployeeButton(Color color1, Color color2) {
 
-            if (!First_Name_TextBox.Text.All(char.IsLetter) || First_Name_TextBox.Text.Length == 0) {
-                PopToastie("First name can not be blank and must only contain alphabet characters", ToastColors.ERROR, 5);
-                return (0, 0.0m, 0.0m, false);
-            }//if (!First_Name_TextBox.Text.All(char.IsLetter) || First_Name_TextBox.Text.Length == 0) {
-            if (!Last_Name_TextBox.Text.All(char.IsLetter) || Last_Name_TextBox.Text.Length == 0) {
-                PopToastie("Last name can not be blank and must only contain alphabet characters", ToastColors.ERROR, 5);
-                return (0, 0.0m, 0.0m, false);
-            }//if (!Last_Name_TextBox.Text.All(char.IsLetter) || Last_Name_TextBox.Text.Length == 0) {
-            if (!int.TryParse(Age_TextBox.Text, out age) && Age_TextBox.Text.Length != 0 || age < 0 || Age_TextBox.Text.Equals("-1")) {
-                PopToastie("Age must be a positive integer", ToastColors.ERROR, 5);
-                return (0, 0.0m, 0.0m, false);
-            }//if (!int.TryParse(Age_TextBox.Text, out age) && Age_TextBox.Text.Length != 0 || age < 0 || Age_TextBox.Text.Equals("-1")) {
-            if (!decimal.TryParse(Hourly_Rate_TextBox.Text, out hourlyRate) || Hourly_Rate_TextBox.Text.Length == 0 || Hourly_Rate_TextBox.Text.Trim()[0] == '-') {
-                PopToastie("Hourly rate must be a positive number", ToastColors.ERROR, 5);
-                return (0, 0.0m, 0.0m, false);
-            }//if (!decimal.TryParse(Hourly_Rate_TextBox.Text, out hourlyRate) || Hourly_Rate_TextBox.Text.Length == 0 || Hourly_Rate_TextBox.Text.Trim()[0] == '-') {
-            if (Usual_Hours_TextBox.Text.Trim().Length != 0 && (!decimal.TryParse(Usual_Hours_TextBox.Text, out usualHours) || Usual_Hours_TextBox.Text.Trim()[0] == '-')) {
-                PopToastie("Usual hours must be a positive number", ToastColors.ERROR, 5);
-                return (0, 0.0m, 0.0m, false);
-            }//if (Usual_Hours_TextBox.Text.Trim().Length != 0 && (!decimal.TryParse(Usual_Hours_TextBox.Text, out usualHours) || Usual_Hours_TextBox.Text.Trim()[0] == '-')) {
+        private void UpdateDeleteButton(Color color1, Color color2) {
+            Employee_Delete_Secondary.Background = new SolidColorBrush(color1);
+            Employee_Delete_Secondary.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateDeleteButton(Color color1, Color color2) {
 
-            return (Age_TextBox.Text.Length == 0 ? -1 : age, hourlyRate, usualHours, true);
-        }//private (int, decimal, decimal, bool) IsValid() {
+        private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
+            Last_Name_Label.Background = Age_Label.Background = Hourly_Rate_Label.Background = Usual_Hours_Label.Background = EmployeeID_LabelText.Background = First_Name_Label.Background = new SolidColorBrush(color1);
+            Last_Name_Label.Foreground = Age_Label.Foreground = Hourly_Rate_Label.Foreground = Usual_Hours_Label.Foreground = EmployeeID_LabelText.Foreground = First_Name_Label.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateLeftBoxLabelsColor(Color color1, Color color2) {
+
+        private void UpdateLeftBoxSquare(Color color) {
+            Left_Box.Fill = new SolidColorBrush(color);
+        }//private void UpdateLeftBoxSquare(Color color) {
+
+        private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
+            EmployeeID_Label.Background = First_Name_TextBox.Background = Last_Name_TextBox.Background = Age_TextBox.Background = Hourly_Rate_TextBox.Background = Usual_Hours_TextBox.Background = new SolidColorBrush(color1);
+            EmployeeID_Label.Foreground = First_Name_TextBox.Foreground = Last_Name_TextBox.Foreground = Age_TextBox.Foreground = Hourly_Rate_TextBox.Foreground = Usual_Hours_TextBox.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateLeftBoxTextBoxColor(Color color1, Color color2) {
+
+        private void UpdateRequired_Label(Color color) {
+            Required_Label.Foreground = new SolidColorBrush(color);
+        }//private void UpdateRequired_Label(Color color) {
+
+        private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
+            Salary_Label_Text.Background = Wage_Label_Text.Background = Right_Box_Employee_Labels.Background = Right_Box_Hours_Labels.Background = new SolidColorBrush(color1);
+            Salary_Label_Text.Foreground = Wage_Label_Text.Foreground = Right_Box_Employee_Labels.Foreground = Right_Box_Hours_Labels.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateRightBoxLabelsColor(Color color1, Color color2) {
+
+        private void UpdateRightBoxSquare(Color color) {
+            Right_Box.Fill = new SolidColorBrush(color);
+        }//private void UpdateRightBoxSquare(Color color) {
+
+        private void UpdateRightBoxTextBoxColor(Color color1, Color color2) {
+            Hours_TextBox.Background = new SolidColorBrush(color1);
+            Hours_TextBox.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateRightBoxTextBoxColor(Color color1, Color color2) {
+
+        private void UpdateRightBoxWageLabel(Color color1, Color color2) {
+            Wage_Label.Background = new SolidColorBrush(color1);
+            Wage_Label.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateRightBoxWageLabel(Color color1, Color color2) {
+
+        private void UpdateRightSalaryLabel(Color color1, Color color2) {
+            Salary_Label.Background = new SolidColorBrush(color1);
+            Salary_Label.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateRightSalaryLabel(Color color1, Color color2) {
+
+        private void UpdateSaveButton(Color color1, Color color2) {
+            Employee_Save_Secondary.Background = new SolidColorBrush(color1);
+            Employee_Save_Secondary.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateSaveButton(Color color1, Color color2) {
+
+        private void UpdateUpdateButton(Color color1, Color color2) {
+            Employee_Update_Secondary.Background = new SolidColorBrush(color1);
+            Employee_Update_Secondary.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateUpdateButton(Color color1, Color color2) {
+
+        private void UpdateUpdateEmployeeButton(Color color1, Color color2) {
+            Employee_Update.Background = new SolidColorBrush(color1);
+            Employee_Update.Foreground = new SolidColorBrush(color2);
+        }//private void UpdateUpdateEmployeeButton(Color color1, Color color2) {
+
+        /*================End of Helper functions=====================================*/
     }//public partial class MainWindow : Window {
 }//namespace Project2 {
