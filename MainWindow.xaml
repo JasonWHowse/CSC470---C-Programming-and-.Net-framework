@@ -29,7 +29,7 @@
         <Label x:Name="Total_To_Donations_Label" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,320,0,0" Height="30" Width="90" Content="Label" BorderBrush="Black" BorderThickness="1" Background="#102419" Foreground="#00ff00" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <Label x:Name="Upkeep_Total_Label" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="185,250,0,0" Height="30" Width="90" Content="Label" BorderBrush="Black" BorderThickness="1" Background="#102419" Foreground="#00ff00" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Padding="0,0,0,0"/>
         <Label x:Name="Total_To_Upkeep_Label" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="185,320,0,0" Height="30" Width="90" Content="Label" BorderBrush="Black" BorderThickness="1" Background="#102419" Foreground="#00ff00" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
-        <Border  x:Name="Toastie" CornerRadius="10" Width="160" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" BorderThickness="1,1,1,1">
+        <Border  x:Name="Toastie" CornerRadius="10" Width="160" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" BorderThickness="1,1,1,1" Visibility="Hidden">
             <TextBlock x:Name="ToastieText"  TextAlignment="Center" Margin="1,1,1,1" TextWrapping="Wrap" VerticalAlignment="Center"/>
         </Border>
     </Grid>
