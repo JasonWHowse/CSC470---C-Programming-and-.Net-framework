@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Lab4"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="320" MinHeight="420" MinWidth="300">
-    <Grid x:Name="Background_Grid" Background="#102419">
+    <Grid x:Name="Background_Grid" Background="#102419" KeyDown="OnKeyDownHandler">
         <Rectangle x:Name="Inner_Box" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" Height="360" Width="290" Stroke="Black" Fill="#08120c"/>
         <Label x:Name="Donation_Label" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-130,-320,0,0" Height="30" Width="125" Content="Label" BorderBrush="Black" BorderThickness="1" Background="#102419" Foreground="#00ff00" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
         <TextBox x:Name="Donation_TextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="130,-320,0,0" Height="30" Width="125" BorderBrush="Black" Background="#102419" Foreground="#00ff00" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  TextChanged="DonationTextBoxDelta"/>

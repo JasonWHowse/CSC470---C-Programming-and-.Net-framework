@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -46,6 +47,11 @@ namespace Lab4 {
             Donation_TextBox.Text = "";
             PopToastie("Donation Added", ToastColors.PRIMARY, 5);
         }//private void Add_Charity_To_List_Button_Click(Object sender, RoutedEventArgs e) {
+        private void OnKeyDownHandler(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Return) {
+                Add_Charity_To_List_Button_Click(sender, new RoutedEventArgs());
+            }//if (e.Key == Key.Return) {
+        }//private void OnKeyDownHandler(object sender, KeyEventArgs e) {
 
         private string GetToCharityString() {
             string output = "";
