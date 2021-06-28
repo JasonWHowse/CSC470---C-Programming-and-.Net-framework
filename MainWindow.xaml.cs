@@ -14,7 +14,7 @@ namespace Lab4 {
 
         private readonly List<Charity> donations = new List<Charity>();
         private enum ToastColors { PRIMARY, WARNING, ERROR }
-        DispatcherTimer timer = new DispatcherTimer();
+        private readonly DispatcherTimer timer = new DispatcherTimer();
         private string lastDonation = "";
         public MainWindow() {
             InitializeComponent();
@@ -48,6 +48,7 @@ namespace Lab4 {
             Donation_TextBox.Text = "";
             PopToastie("Donation Added", ToastColors.PRIMARY, 3);
         }//private void Add_Charity_To_List_Button_Click(Object sender, RoutedEventArgs e) {
+
         private void OnKeyDownHandler(object sender, KeyEventArgs e) {
             if (e.Key == Key.Return) {
                 Add_Charity_To_List_Button_Click(sender, new RoutedEventArgs());
@@ -139,7 +140,6 @@ namespace Lab4 {
             };
             timer.Start();
         }//private void PopToastie(string message, ToastColors tc, int seconds) {
-
 
         private void UpdateBackgroundGridColor(Color backgroundColor) {
             Background_Grid.Background = new SolidColorBrush(backgroundColor);
