@@ -14,6 +14,7 @@ namespace Lab4 {
 
         private readonly List<Charity> donations = new List<Charity>();
         private enum ToastColors { PRIMARY, WARNING, ERROR }
+        DispatcherTimer timer = new DispatcherTimer();
         private string lastDonation = "";
         public MainWindow() {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace Lab4 {
         private void Add_Charity_To_List_Button_Click(object sender, RoutedEventArgs e) {
 
             if (!decimal.TryParse(Donation_TextBox.Text, out decimal donation) || Donation_TextBox.Text.Length == 0 || Donation_TextBox.Text.Trim()[0] == '-') {
-                PopToastie("Donation must be a positive number", ToastColors.ERROR, 5);
+                PopToastie("Donation must be a positive number", ToastColors.ERROR, 3);
                 return;
             }//if (!decimal.TryParse(Donation_TextBox.Text, out decimal donation) || Donation_TextBox.Text.Length == 0 || Donation_TextBox.Text.Trim()[0] == '-') {
             donations.Add(new Charity());
@@ -45,7 +46,7 @@ namespace Lab4 {
             Total_To_Donations_Label.Content = Charity.GetTotalDonations();
             Total_To_Upkeep_Label.Content = Charity.GetTotalUpKeep();
             Donation_TextBox.Text = "";
-            PopToastie("Donation Added", ToastColors.PRIMARY, 5);
+            PopToastie("Donation Added", ToastColors.PRIMARY, 3);
         }//private void Add_Charity_To_List_Button_Click(Object sender, RoutedEventArgs e) {
         private void OnKeyDownHandler(object sender, KeyEventArgs e) {
             if (e.Key == Key.Return) {
@@ -82,7 +83,7 @@ namespace Lab4 {
                 int index = Donation_TextBox.CaretIndex - 1;
                 Donation_TextBox.Text = lastDonation;
                 Donation_TextBox.CaretIndex = index;
-                PopToastie("Donation must be a positive number", ToastColors.ERROR, 5);
+                PopToastie("Donation must be a positive number", ToastColors.ERROR, 3);
             }//if (Donation_TextBox.Text.Length > 0 && !Donation_TextBox.Text.ToString().Equals(".") && (!decimal.TryParse(Donation_TextBox.Text, out decimal donation) || donation < 0)) {
             lastDonation = Donation_TextBox.Text;
         }//private void DonationTextBoxDelta(object sender, RoutedEventArgs e) {
@@ -130,9 +131,7 @@ namespace Lab4 {
             }//switch (tc) {
             ToastieText.Text = message;
             Toastie.Visibility = Visibility.Visible;
-            DispatcherTimer timer = new DispatcherTimer {
-                Interval = TimeSpan.FromSeconds(seconds)
-            };
+            timer.Interval = TimeSpan.FromSeconds(seconds);
             timer.Stop();
             timer.Tick += (s, en) => {
                 Toastie.Visibility = Visibility.Hidden;
@@ -140,6 +139,7 @@ namespace Lab4 {
             };
             timer.Start();
         }//private void PopToastie(string message, ToastColors tc, int seconds) {
+
 
         private void UpdateBackgroundGridColor(Color backgroundColor) {
             Background_Grid.Background = new SolidColorBrush(backgroundColor);
