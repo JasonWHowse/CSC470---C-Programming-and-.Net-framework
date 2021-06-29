@@ -10,12 +10,19 @@
 
         public static void SetValues(Charity charity, decimal donation) {
             charity.donation = donation.ToString("C2");
-            charity.upKeep = (donation * .17m).ToString("C2");
-            charity.charityValue = (donation * .83m).ToString("C2");
-            totalCharity += donation * .83m;
-            totalUpKeep += donation * .17m;
             totalDonations += donation;
+            decimal newDonation = Splitter(ref donation);
+            charity.upKeep = donation.ToString("C2");
+            totalUpKeep += donation;
+            charity.charityValue = newDonation.ToString("C2");
+            totalCharity += newDonation;
         }//public static void SetValues(Charity charity, int value) {
+
+        private static decimal Splitter(ref decimal donation) {
+            decimal output = donation;
+            donation = 0.17m * donation;
+            return output - donation;
+        }//private static void Splitter(ref decimal donation) {
 
         public string GetDonation() {
             return donation;
