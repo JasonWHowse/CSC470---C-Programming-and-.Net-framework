@@ -1,29 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Lab5.src;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Lab5 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+        private readonly Logs logs = new Logs();
         public MainWindow() {
-            InitializeComponent();
-        }
+            this.InitializeComponent();
+        }//public MainWindow() {
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-
-        }
-    }
-}
+            string keyPress = ((Button)sender).Content.ToString();
+            switch (keyPress) {
+                case "C":
+                    this.CodeName.Password = "";
+                    break;
+                case "#":
+                    if (this.CodeName.Password.Length > 0) {
+                        this.logs.Add(this.CodeName.Password);
+                        this.CodeName.Password = "";
+                        this.Log.Text = this.logs.ToString().Trim();
+                        if (this.logs.Count == 6) {
+                            this.Log.Padding = new Thickness(10.0, 0.0, 0.0, 0.0);
+                        }//if (this.logs.Count == 6) {
+                    }//if (this.CodeName.ToString().Length > 0) {
+                    break;
+                default:
+                    this.CodeName.Password += keyPress;
+                    break;
+            }//switch (keyPress) {
+        }//private void Button_Click(object sender, RoutedEventArgs e) {
+    }//public partial class MainWindow : Window {
+}//namespace Lab5 {

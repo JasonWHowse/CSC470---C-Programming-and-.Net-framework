@@ -5,23 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
-    <Grid Background="LightGray">
-        <Button Height="30" Width="30" Margin="-60,-120,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="1" Click="Button_Click" BorderThickness="1,1,1,1">
-            <Button.Effect>
-                <DropShadowEffect/>
-            </Button.Effect>
-        </Button>
-        <Button Height="30" Width="30" Margin="0,-120,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="2" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="60,-120,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="3" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="-60,-60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="4" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="0,-60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="5" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="60,-60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="6" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="-60,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="7" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="8" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="60,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="9" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="-60,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="C" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="0,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="0" Click="Button_Click"/>
-        <Button Height="30" Width="30" Margin="60,60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="#" Click="Button_Click"/>
+        Title="MainWindow" Height="400" Width="300">
+    <Grid x:Name="grid">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint=".4,1" StartPoint=".6,0">
+                <GradientStop Color="#FFAAAAbb"/>
+                <GradientStop Color="#FFAAAAbb" Offset="1"/>
+                <GradientStop Color="#FFD3D3E3" Offset="0.5"/>
+                <GradientStop Color="#FFEEEEff" Offset="0.179"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Content="Security code:" Margin="-100,-325,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <PasswordBox x:Name="CodeName" PasswordChar="*" Margin="100,-325,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" BorderBrush="Black" BorderThickness="1" Password="" FontSize="24" Cursor="None" IsEnabled="False" Background="White"/>
+        <Button Height="50" Width="50" Margin="-100,-220,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="1" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="0,-220,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="2" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="100,-220,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="3" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="-100,-120,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="4" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="0,-120,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="5" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="100,-120,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="6" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="-100,-20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="7" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="0,-20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="8" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="100,-20,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="9" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="-100,80,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="C" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="0,80,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="0" Click="Button_Click" Background="LightGray"/>
+        <Button Height="50" Width="50" Margin="100,80,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="#" Click="Button_Click" Background="LightGray"/>
+        <Label Content="Access log:" Margin="-200,150,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <ScrollViewer HorizontalAlignment="Center" VerticalAlignment="Center" VerticalScrollBarVisibility="Auto" Height="90" Width="250" Margin="0,260,0,0">
+            <TextBlock x:Name="Log" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto"  Width="250" Background="White" Foreground="Black" MinHeight="90" />
+        </ScrollViewer>
     </Grid>
 </Window>
