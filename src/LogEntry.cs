@@ -2,38 +2,38 @@
 
 namespace Lab5.src {
     public class LogEntry {
-        private readonly string group;
-        private readonly DateTime dateTime;
+        private string Group { get; set; }
+        private DateTime DateTime { get; set; }
 
         public LogEntry(string group) {
             group = group.Length == 1 ? "0" : group;
-            this.dateTime = DateTime.Now;
+            this.DateTime = DateTime.Now;
             switch (group) {
                 case "1645":
                 case "1689": //Technicians
-                    this.group = "Technicians";
+                    this.Group = "Technicians";
                     break;
                 case "8345": //Custodians
-                    this.group = "Custodians";
+                    this.Group = "Custodians";
                     break;
                 case "9998":
                 case "1006":
                 case "1007":
                 case "1008": //Scientists
-                    this.group = "Scientists";
+                    this.Group = "Scientists";
                     break;
                 case "0":
-                    this.group = "Restricted Access";
+                    this.Group = "Restricted Access";
                     break;
                 default:
-                    this.group = "Access Denied";
+                    this.Group = "Access Denied";
                     break;
             }//switch (group) {
         }//public LogEntry(string group) {
 
         override
         public string ToString() {
-            return this.dateTime + " " + this.group;
+            return this.DateTime + " " + this.Group;
         }//public string ToString() {
     }//public class LogEntry {
 }//namespace Lab5.src {
