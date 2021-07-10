@@ -28,19 +28,19 @@ namespace Prj3_F18_.src {
         }//public void SetCalculatorOn() {
 
         public void SetOperand(string input) {
-            if (this.engine.SetOperand(input) && !this.engine.IsEnd()) {
+            if (this.engine.SetOperand(input) && !this.engine.End) {
                 this.display.DisplayOperand(input);
-            } else {//if (this.engine.SetOperand(input)&&!this.engine.IsEnd()) {
+            } else {//if (this.engine.SetOperand(input) && !this.engine.End) {
                 this.display.DisplayError();
             }//else {
         }//public void SetOperand(string input) {
 
         public void SetOperator(string input) {
-            if (this.engine.SetOperator(input) && !this.engine.IsEnd()) {
+            if (this.engine.SetOperator(input) && !this.engine.End) {
                 this.display.DisplayClear();
-            } else if (input.Equals("=") && !this.engine.IsEnd() && this.engine.IsReadyForSolution()) {//if (this.engine.SetOperator(input) && !this.engine.IsEnd()) {
+            } else if (input.Equals("=") && !this.engine.End && this.engine.IsReadyForSolution()) {//if (this.engine.SetOperator(input) && !this.engine.End) {
                 this.SetSolution();
-            } else {//else if (input.Equals("=") && !this.engine.IsEnd() && this.engine.IsReadyForSolution()) {
+            } else {//else if (input.Equals("=") && !this.engine.End && this.engine.IsReadyForSolution()) {
                 this.display.DisplayError();
             }//else {
         }//public void SetOperator(string input) {

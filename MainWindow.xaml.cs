@@ -22,19 +22,19 @@ namespace Prj3_F18_ {
         }//private void Button_Click_Off(object sender, RoutedEventArgs e) {
 
         private void Button_Click_C(object sender, RoutedEventArgs e) {
-            if (this.display.DisplayIsOn()) {
+            if (this.display.IsOn) {
                 this.inter.ClearSolution();
             }//if (this.display.DisplayIsOn()) {
         }//private void Button_Click_C(object sender, RoutedEventArgs e) {
 
         private void Button_Click_Operator(object sender, RoutedEventArgs e) {
-            if (this.display.DisplayIsOn()) {
+            if (this.display.IsOn) {
                 this.inter.SetOperator(((Button)sender).Content.ToString());
             }//if (this.display.DisplayIsOn()) {
         }//private void Button_Click_Operator(object sender, RoutedEventArgs e) {
 
         private void Button_Click_Operand(object sender, RoutedEventArgs e) {
-            if (this.display.DisplayIsOn()) {
+            if (this.display.IsOn) {
                 this.inter.SetOperand(((Button)sender).Content.ToString());
             }//if (this.display.DisplayIsOn()) {
         }//private void Button_Click_Operand(object sender, RoutedEventArgs e) {

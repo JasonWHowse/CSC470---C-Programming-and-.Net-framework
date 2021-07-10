@@ -3,16 +3,19 @@ using System.Windows.Media;
 
 namespace Prj3_F18_.src {
     public class Display : IDisplay {
-        private bool isOn = false;
-        private readonly ContentControl display = null;
-        private readonly string error = "Error";
+        public bool IsOn { get; private set; }
+        private string Error { get; set; }
+        private readonly ContentControl display;
         public Display(ContentControl display) {
             this.display = display;
+            this.IsOn = false;
+            this.Error = "Error";
         }//public Display(ContentControl display) {
 
         public Display(ContentControl display, string errorMsg) {
             this.display = display;
-            this.error = errorMsg;
+            this.IsOn = false;
+            this.Error = errorMsg;
         }//public Display(ContentControl display, string errorMsg) {
 
         public void DisplayAnswer(decimal solution) {
@@ -24,24 +27,20 @@ namespace Prj3_F18_.src {
         }//public void DisplayClear() {
 
         public void DisplayError() {
-            this.display.Content = this.error;
+            this.display.Content = this.Error;
         }//public void DisplayError() {
-
-        public bool DisplayIsOn() {
-            return this.isOn;
-        }//public bool DisplayIsOn() {
 
         public void DisplayOff() {
             this.display.Background = new SolidColorBrush(Color.FromRgb(8, 18, 12));
-            this.isOn = false;
+            this.IsOn = false;
         }//public void DisplayOff() {
 
         public bool DisplayOn() {
-            if (this.isOn) {
+            if (this.IsOn) {
                 return true;
-            }//if (this.isOn) {
+            }//if (this.IsOn) {
             this.display.Background = new SolidColorBrush(Color.FromRgb(16, 36, 25));
-            return !(this.isOn = true);
+            return !(this.IsOn = true);
         }//public bool DisplayOn() {
 
         public void DisplayOperand(string operand) {

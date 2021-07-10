@@ -1,18 +1,20 @@
 ﻿namespace Prj3_F18_.src {
     public class Engine {
+        public bool End { get; private set; }
         private decimal solution;
         private int? firstOperand = null;
         private int? secondOperand = null;
         private string _operator = null;
-        private bool end = false;
 
-        public Engine() { }
+        public Engine() {
+            this.End = false;
+        }//public Engine() {
 
         public void ClearAll() {
             this.firstOperand = null;
             this.secondOperand = null;
             this._operator = null;
-            this.end = false;
+            this.End = false;
         }//public void ClearAll() {
 
         public bool SetOperand(string input) {
@@ -54,12 +56,12 @@
                 default:
                     break;
             }//switch (this._operator) {
-            this.end = true;
+            this.End = true;
             return this.solution;
         }//public decimal SetSolution() {
 
         public bool IsEnd() {
-            return this.end;
+            return this.End;
         }//public bool IsEnd() {
 
         public bool IsReadyForSolution() {
