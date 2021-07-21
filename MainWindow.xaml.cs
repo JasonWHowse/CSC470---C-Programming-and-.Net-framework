@@ -22,7 +22,7 @@ namespace Lab6 {
             this.PopulateStates();
             this.StateComboBox.ItemsSource = this.states;
             this.StatePackageComboBox.ItemsSource = this.states;
-            //this.PreLoadPackages('Z',short.MaxValue);//first var char limits the states generating packages by the first char in the abbreviation, the second var short creates that many packages per state
+            //this.PreLoadPackages('Z', 2);//first var char limits the states generating packages by the first char in the abbreviation, the second var short creates that many packages per state
             this.SetInitialSettings();
         }//public MainWindow() {
 
@@ -52,7 +52,7 @@ namespace Lab6 {
 
         private void EditButton_Click(object sender, RoutedEventArgs e) {
             if (this.AddIsValid()) {
-                Package objRef = this.GetPackageByPID(this.PackageIDTextBox.Text);
+                Package objRef = this.packages.Find(c => c.Equals(this.PackageIDTextBox.Text));
                 if (!objRef.State.Equals(this.StateComboBox.SelectedItem.ToString())) {
                     _ = this.statePackage.Remove(objRef);
                     objRef.State = this.StateComboBox.SelectedItem.ToString();
@@ -86,7 +86,7 @@ namespace Lab6 {
         }//private void NextButton_Click(object sender, RoutedEventArgs e) {
 
         private void RemoveButton_Click(object sender, RoutedEventArgs e) {
-            Package objRef = this.GetPackageByPID(this.PackageIDTextBox.Text);
+            Package objRef = this.packages.Find(c => c.Equals(this.PackageIDTextBox.Text));
             if (!this.packages.Remove(objRef)) {
                 this.Toast(this.PackageIDTextBox, ToastColors.ERROR, "Failed to remove the package");
             } else {//if (!this.packages.Remove(objRef)) {
@@ -141,7 +141,8 @@ namespace Lab6 {
             if (((ListBox)sender).SelectedIndex != -1) {
                 this.SetPackageInformation(true);
                 this.ClearPackageInformation();
-                this.DisplayPackage(this.GetPackageByPID(((ListBox)sender).SelectedItem.ToString()));
+                this.packageIndex = this.packages.IndexOf(this.packages.Find(c => c.Equals(((ListBox)sender).SelectedItem.ToString())));
+                this.DisplayPackage(this.packages[this.packageIndex]);
             }//if (((ListBox)sender).SelectedIndex != -1) {
             this.GarbageCollection(75);
         }//private void PackageListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
@@ -271,16 +272,6 @@ namespace Lab6 {
                 }//foreach (UIElement element in removalElements) {
             }//if (this.MainGrid.Children.Count > removalThreshold) {
         }//private void GarbageCollection(int removalThreshold) {
-
-        private Package GetPackageByPID(string pid) {
-            for (int i = 0; i < this.packages.Count; i++) {
-                if (this.packages[i].Equals(pid)) {
-                    this.packageIndex = i;
-                    return this.packages[i];
-                }//if (this.packages[i].Equals(pid)) {
-            }//for (int i = 0; i < this.packages.Count; i++) {
-            return null;
-        }//private Package GetPackageByPID(string pid) {
 
         private void SetPackageInformation(bool isEnabled) {
             this.ArrivedAtLabel.IsEnabled = this.ArrivedAtTextBox.IsEnabled = this.PackageInformationLabel.IsEnabled = this.PackageIDLabel.IsEnabled = this.PackageIDTextBox.IsEnabled = this.AddressLabel.IsEnabled = this.AddressTextBox.IsEnabled = this.CityLabel.IsEnabled = this.CityTextBox.IsEnabled = this.StateLabel.IsEnabled = this.StateComboBox.IsEnabled = this.ZipLabel.IsEnabled = this.ZipTextBox.IsEnabled = isEnabled;
