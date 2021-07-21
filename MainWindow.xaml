@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="300" Width="700">
+    <Grid x:Name="MainGrid"  Background="#ece9d8">
+        <Label x:Name="ArrivedAtLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-570,-200,0,0" VerticalContentAlignment="Center" Content="Arrived at:" IsEnabled="False"/>
+        <TextBox x:Name="ArrivedAtTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="150" Margin="-325,-200,0,0" VerticalContentAlignment="Center" Text="ArrivedAtTextBox" IsEnabled="False" IsReadOnly="True"/>
+<!--====================================Package Information Box========================================-->
+        <Rectangle x:Name="PackageInformationRectangle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="500" Margin="-150,0,0,0" Stroke="Black"/>
+        <Label x:Name="PackageInformationLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="Auto" Margin="-525,-150,0,0" VerticalContentAlignment="Center" Content="Package Information" Background="#ece9d8" Padding="0" IsEnabled="False"/>
+        <Label x:Name="PackageIDLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-550,-90,0,0" VerticalContentAlignment="Center" Content="Package ID:" IsEnabled="False"/>
+        <TextBox x:Name="PackageIDTextBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="400" Margin="-80,-90,0,0" VerticalContentAlignment="Center" Text="PackageIDTextBox" IsEnabled="False" IsReadOnly="True"/>
+        <Label x:Name="AddressLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-550,0,0,0" VerticalContentAlignment="Center" Content="Address:" IsEnabled="False"/>
+        <TextBox x:Name="AddressTextBox"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="400" Margin="-80,0,0,0" VerticalContentAlignment="Center" Text="AddressTextBox" IsEnabled="False"/>
+        <Label x:Name="CityLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-550,90,0,0" VerticalContentAlignment="Center" Content="City:" IsEnabled="False"/>
+        <TextBox x:Name="CityTextBox"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="180" Margin="-300,90,0,0" VerticalContentAlignment="Center" Text="CityTextBox" IsEnabled="False"/>
+        <Label x:Name="StateLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-40,90,0,0" VerticalContentAlignment="Center" Content="State:" IsEnabled="False"/>
+        <ComboBox x:Name="StateComboBox"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="60" Margin="20,90,0,0" VerticalContentAlignment="Center" Text="StateInfoComboBox" IsEnabled="True"/>
+        <Label x:Name="ZipLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="30" Margin="130,90,0,0" VerticalContentAlignment="Center" Content="Zip:" IsEnabled="False"/>
+        <TextBox x:Name="ZipTextBox"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="240,90,0,0" VerticalContentAlignment="Center" IsEnabled="False" TextChanged="ZipTextBoxDelta"/>
+<!--==============================================Buttons=============================================-->
+        <Button x:Name="BackButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-570,200,0,0" Content="BACK" IsEnabled="False" Click="BackButton_Click"/>
+        <Button x:Name="ScanNewButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-402,200,0,0" Content="Scan New" IsEnabled="True" Click="ScanNewButton_Click"/>
+        <Button x:Name="AddButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-234,200,0,0" Content="Add" IsEnabled="False" Click="AddButton_Click"/>
+        <Button x:Name="RemoveButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="-66,200,0,0" Content="Remove" IsEnabled="False" Click="RemoveButton_Click"/>
+        <Button x:Name="EditButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="102,200,0,0" Content="Edit" IsEnabled="False" Click="EditButton_Click"/>
+        <Button x:Name="NextButton" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="80" Margin="270,200,0,0" Content="NEXT" IsEnabled="False" Click="NextButton_Click"/>
+<!--====================================Package by State Box===========================================-->
+        <Rectangle x:Name="PackagesByStateRectangle" HorizontalAlignment="Center" VerticalAlignment="Center" Height="150" Width="125" Stroke="Black" Margin="525,0,0,0"/>
+        <Label x:Name="PackagesByStateLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="Auto" Margin="515,-150,0,0" VerticalContentAlignment="Center" Content="Packages by State" Background="#ece9d8" Padding="0" IsEnabled="False"/>
+        <ComboBox x:Name="StatePackageComboBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="90" Margin="525,-90,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" SelectionChanged="StatePackageComboBox_SelectionChanged"/>
+        <ListBox x:Name="PackageListBox" HorizontalAlignment="Center" VerticalAlignment="Center" Height="90" Width="90" Margin="525,30,0,0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" SelectionChanged="PackageListBox_SelectionChanged"/>
     </Grid>
 </Window>
