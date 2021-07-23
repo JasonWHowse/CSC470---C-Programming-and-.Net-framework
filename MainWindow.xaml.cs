@@ -236,7 +236,7 @@ namespace Lab6 {
         /*=============================Is Valid Methods=============================================*/
 
         private bool AddIsValid() {
-            return this.TextBoxIsValid(this.AddressTextBox, "Not a valid address") & this.TextBoxIsValid(this.CityTextBox, "Not a valid city") & this.TextBoxIsValid(this.ZipTextBox, "Ivalid zip") & this.StateComboBoxIsValid();
+            return this.TextBoxIsValid(this.AddressTextBox, "Not a valid address") & this.TextBoxIsValid(this.CityTextBox, "Not a valid city") & this.TextBoxIsValid(this.ZipTextBox, "Invalid zip") & this.StateComboBoxIsValid();
         }//private bool AddIsValid() {
 
         private bool StateComboBoxIsValid() {
