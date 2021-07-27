@@ -30,9 +30,24 @@ namespace Project4.src {
             }//get {
         }//public static bool ContinueClrQuit {
 
+        public static char ChooseTask {
+            get {
+                Console.WriteLine("Press the character in paranthesis to complete the stated task");
+                Console.WriteLine("Display (S)uppliers");
+                Console.WriteLine("Display (P)arts");
+                Console.WriteLine("Display S(h)ipments");
+                Console.WriteLine("Display Suppliers (N)ames");
+                Console.WriteLine("Display C(i)ties by Color");
+                Console.WriteLine("Display Part Name and Q(u)antity by Supplier Number");
+                Console.WriteLine("(Q)uit");
+                return Console.ReadKey(true).Key.ToString().ToUpper()[0];
+            }//get {
+        }//public static char ChooseTask {
+
         public void ColorQuery() {
             string color = this.GetColor();
             var citiesInColorQuery = from partsTable in this.parts orderby partsTable.City where partsTable.Color.Equals(color) select partsTable.City;
+            Console.WriteLine();
             Console.WriteLine((citiesInColorQuery.Distinct().Count() == 1 ? "City" : "Cities") + " that have parts matching the color " + color.ToLower() + ":");
             foreach (string city in citiesInColorQuery.Distinct()) {
                 Console.WriteLine(city);
@@ -42,6 +57,7 @@ namespace Project4.src {
         public void GetPartNameAndQTYBySupplierFromShipment() {
             string SNumber = this.GetSNumber();
             var PNameQTYQuery = (from shipmentRow in this.shipments join partRow in this.parts on shipmentRow.PN equals partRow.PN orderby partRow.PName where shipmentRow.SN.Equals(SNumber) select new { partRow.PName, shipmentRow.QTY }).Distinct();
+            Console.WriteLine();
             Console.WriteLine("Part" + (PNameQTYQuery.Count() == 1 ? "" : "s") + " in shipments with supplier number " + SNumber);
             foreach (var row in PNameQTYQuery) {
                 Console.WriteLine("Part Name: " + row.PName + ", Quantity: " + row.QTY);
@@ -61,8 +77,10 @@ namespace Project4.src {
                 Console.WriteLine("Enter a color to query by color and get city names");
                 string color = this.NormalizeInput(Console.ReadLine().ToString());
                 if (color.Length == 0) {
+                    Console.WriteLine();
                     Console.WriteLine("You must enter a color");
                 } else if ((from partsTable in this.parts where partsTable.Color.Equals(color) select partsTable.Color).Count() == 0) {//if (color.Length == 0) {
+                    Console.WriteLine();
                     Console.WriteLine(color + " is not a color of a part please select a color from the following list:");
                     foreach (var row in (from partsTable in this.parts orderby partsTable.Color select partsTable.Color).Distinct()) {
                         Console.WriteLine(row.ToString());
@@ -75,11 +93,13 @@ namespace Project4.src {
 
         private string GetSNumber() {
             while (true) {
-                Console.WriteLine("Enter a supplier number to query by supplier number and get corresponding part names.");
+                Console.WriteLine("Enter a supplier number to query by supplier number and get corresponding part names and quantities.");
                 string SNumber = Console.ReadLine().ToString().ToUpper();
                 if (SNumber.Length == 0) {
+                    Console.WriteLine();
                     Console.WriteLine("You must enter a supplier number.");
                 } else if ((from shipmentRow in this.shipments where shipmentRow.SN.Equals(SNumber) select shipmentRow.PN).Count() == 0) {//if (SNumber.Length == 0) {
+                    Console.WriteLine();
                     Console.WriteLine(SNumber + " has no parts matching that supplier number please select a supplier number from the following list:");
                     foreach (var supNum in (from shipmentsRow in this.shipments orderby shipmentsRow.SN select shipmentsRow.SN).Distinct()) {
                         Console.WriteLine(supNum.ToString());
